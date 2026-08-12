@@ -35,6 +35,11 @@ export function Footer() {
                   Installation
                 </Link>
               </li>
+              <li>
+                <Link href="/getting-started/accessibility" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+                  Accessibility
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -69,13 +74,18 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/components/button" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
-                  Button
+                <Link href="/components/accordion" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+                  Accordion
                 </Link>
               </li>
               <li>
-                <Link href="/components/input" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
-                  Input
+                <Link href="/components/alert-dialog" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+                  Alert Dialog
+                </Link>
+              </li>
+              <li>
+                <Link href="/components/button" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+                  Button
                 </Link>
               </li>
               <li>
@@ -84,13 +94,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/components/card" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
-                  Card
+                <Link href="/components/select" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+                  Select
                 </Link>
               </li>
               <li>
-                <Link href="/components/badge" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
-                  Badge
+                <Link href="/components/tabs" className="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+                  Tabs
                 </Link>
               </li>
             </ul>
@@ -111,11 +121,6 @@ export function Footer() {
               >
                 Creativsingh
               </a>
-            </span>
-            <span className="text-neutral-300 dark:text-neutral-700">•</span>
-            <span className="inline-flex items-center gap-1.5 font-mono text-[11px]">
-              <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              Design-Code Parity System
             </span>
           </div>
         </div>

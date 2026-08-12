@@ -14,6 +14,18 @@ interface NavbarProps {
 export function Navbar({ onMobileNavToggle }: NavbarProps) {
   const pathname = usePathname();
   const [searchOpen, setSearchOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Detect scroll position to transition from transparent hero integration to dark/blurred sticky header
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Global ⌘K / Ctrl+K keyboard shortcut listener
   useEffect(() => {
@@ -29,7 +41,13 @@ export function Navbar({ onMobileNavToggle }: NavbarProps) {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-neutral-200/80 dark:border-neutral-800/80 bg-white/90 dark:bg-[#09090b]/90 backdrop-blur-md transition-colors">
+      <header
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+          scrolled
+            ? 'bg-white/85 dark:bg-[#09090b]/90 backdrop-blur-md border-b border-neutral-200/80 dark:border-neutral-800/80 shadow-sm'
+            : 'bg-transparent border-b border-transparent'
+        }`}
+      >
         <Container size="wide" className="h-16 relative flex items-center justify-between gap-4">
           {/* LEFT: Brand & Mobile Toggle */}
           <div className="flex items-center gap-3 min-w-0">
@@ -54,7 +72,7 @@ export function Navbar({ onMobileNavToggle }: NavbarProps) {
                 C
               </div>
               <span className="tracking-tight text-base font-semibold">Creativ UI</span>
-              <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium">
+              <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md text-neutral-600 dark:text-neutral-400 font-medium">
                 v0.1
               </span>
             </Link>
@@ -69,7 +87,7 @@ export function Navbar({ onMobileNavToggle }: NavbarProps) {
               href="/getting-started/introduction"
               className={`px-3.5 py-1.5 rounded-full transition-colors ${
                 pathname.startsWith('/getting-started')
-                  ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-semibold'
+                  ? 'bg-neutral-100/80 dark:bg-neutral-800/80 text-neutral-900 dark:text-neutral-100 font-semibold'
                   : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
               }`}
             >
@@ -79,7 +97,7 @@ export function Navbar({ onMobileNavToggle }: NavbarProps) {
               href="/foundations/colors"
               className={`px-3.5 py-1.5 rounded-full transition-colors ${
                 pathname.startsWith('/foundations')
-                  ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-semibold'
+                  ? 'bg-neutral-100/80 dark:bg-neutral-800/80 text-neutral-900 dark:text-neutral-100 font-semibold'
                   : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
               }`}
             >
@@ -89,7 +107,7 @@ export function Navbar({ onMobileNavToggle }: NavbarProps) {
               href="/components/button"
               className={`px-3.5 py-1.5 rounded-full transition-colors ${
                 pathname.startsWith('/components')
-                  ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-semibold'
+                  ? 'bg-neutral-100/80 dark:bg-neutral-800/80 text-neutral-900 dark:text-neutral-100 font-semibold'
                   : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
               }`}
             >
@@ -102,7 +120,7 @@ export function Navbar({ onMobileNavToggle }: NavbarProps) {
             {/* Short Search Bar Button with ⌘K Badge */}
             <button
               onClick={() => setSearchOpen(true)}
-              className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-mono text-neutral-500 dark:text-neutral-400 bg-neutral-100/90 dark:bg-neutral-900/90 hover:bg-neutral-200/70 dark:hover:bg-neutral-800/90 border border-neutral-200 dark:border-neutral-800 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 dark:focus-visible:ring-neutral-100 shadow-2xs"
+              className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-mono text-neutral-500 dark:text-neutral-400 bg-neutral-100/60 dark:bg-neutral-900/60 hover:bg-neutral-200/70 dark:hover:bg-neutral-800/90 border border-neutral-200/50 dark:border-neutral-800/50 backdrop-blur-md rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 dark:focus-visible:ring-neutral-100 shadow-2xs"
               aria-label="Search documentation (⌘K)"
               type="button"
             >
@@ -110,17 +128,17 @@ export function Navbar({ onMobileNavToggle }: NavbarProps) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               <span className="hidden sm:inline font-sans text-xs text-neutral-600 dark:text-neutral-300">Search...</span>
-              <kbd className="inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono font-medium text-neutral-500 dark:text-neutral-400 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded shadow-2xs">
+              <kbd className="inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono font-medium text-neutral-500 dark:text-neutral-400 bg-white/80 dark:bg-neutral-800/80 border border-neutral-200/50 dark:border-neutral-700/50 rounded shadow-2xs">
                 ⌘K
               </kbd>
             </button>
 
-            {/* Outlined Figma Icon Link (Design Library Placeholder) */}
+            {/* Outlined Figma Icon Link */}
             <a
               href="https://www.figma.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center p-2 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 dark:focus-visible:ring-neutral-100"
+              className="inline-flex items-center justify-center p-2 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100/60 dark:hover:bg-neutral-800/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 dark:focus-visible:ring-neutral-100"
               aria-label="Figma design library"
               title="Figma Design Library"
             >
@@ -138,7 +156,7 @@ export function Navbar({ onMobileNavToggle }: NavbarProps) {
               href="https://github.com/creativsingh/creativ-ui"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center p-2 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 dark:focus-visible:ring-neutral-100"
+              className="inline-flex items-center justify-center p-2 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100/60 dark:hover:bg-neutral-800/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 dark:focus-visible:ring-neutral-100"
               aria-label="GitHub repository"
               title="GitHub Repository"
             >
