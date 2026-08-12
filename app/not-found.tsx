@@ -22,16 +22,17 @@ export default function NotFound() {
             The requested documentation page or component slug does not exist in the Creativ UI index.
           </p>
 
+          {/* Paired CTAs with equal length/width */}
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/getting-started/introduction"
-              className="h-10 px-5 rounded-full bg-neutral-950 dark:bg-neutral-100 text-white dark:text-neutral-950 font-medium text-sm inline-flex items-center justify-center transition-opacity hover:opacity-90"
+              className="w-full sm:w-56 h-10 px-5 rounded-full bg-neutral-950 dark:bg-neutral-100 text-white dark:text-neutral-950 font-medium text-sm inline-flex items-center justify-center transition-opacity hover:opacity-90 shadow-sm"
             >
               Return to Documentation
             </Link>
             <Link
               href="/"
-              className="h-10 px-5 rounded-full border border-neutral-300 dark:border-neutral-700 font-medium text-sm inline-flex items-center justify-center hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+              className="w-full sm:w-56 h-10 px-5 rounded-full border border-neutral-300 dark:border-neutral-700 font-medium text-sm inline-flex items-center justify-center hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
             >
               Back to Home
             </Link>

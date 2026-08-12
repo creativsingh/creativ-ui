@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="w-full border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-950/50 py-12 lg:py-16 text-sm text-neutral-600 dark:text-neutral-400">
       <Container size="wide">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* Column 1: Brand & Positioning */}
+          {/* Column 1: Brand & Core Tagline */}
           <div className="space-y-3 md:col-span-1">
             <div className="flex items-center gap-2 font-semibold text-neutral-900 dark:text-neutral-100">
               <div className="w-5 h-5 rounded bg-neutral-950 dark:bg-neutral-100 text-white dark:text-neutral-950 flex items-center justify-center font-mono text-[10px] font-bold">
@@ -15,7 +15,7 @@ export function Footer() {
               <span className="text-sm tracking-tight font-semibold">Creativ UI</span>
             </div>
             <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
-              An open-source design system ecosystem combining accessible React components, matching Figma designs, design tokens, and educational guides.
+              An open-source design system combining production-ready React components with a matching Figma library. One shared design system. One visual language. One source of truth.
             </p>
           </div>
 
@@ -98,11 +98,24 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-neutral-200/60 dark:border-neutral-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-          <p>© {new Date().getFullYear()} Creativ UI Ecosystem. Bridging Design & Engineering.</p>
-          <div className="flex items-center gap-4">
+          <p>© {new Date().getFullYear()} Creativ UI. Built on Base UI & Tailwind CSS.</p>
+
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="text-xs text-neutral-500 dark:text-neutral-400 flex items-center gap-1.5 font-mono">
+              <span>Created by</span>
+              <a
+                href="https://github.com/creativsingh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-neutral-900 dark:text-neutral-100 hover:underline transition-all"
+              >
+                Creativsingh
+              </a>
+            </span>
+            <span className="text-neutral-300 dark:text-neutral-700">•</span>
             <span className="inline-flex items-center gap-1.5 font-mono text-[11px]">
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              Base UI + Tailwind CSS Ecosystem
+              Design-Code Parity System
             </span>
           </div>
         </div>

@@ -1,8 +1,8 @@
 # Creativ UI
 
-> **Open-Source Design System & React Component Library**
+> **Open-Source Design System & Component Library**
 > 
-> Bridging the gap between design and engineering with accessible Base UI primitives, pure Tailwind CSS styling, 1:1 Figma design parity, and educational documentation.
+> Seamlessly connecting design and development with accessible Base UI primitives, pure Tailwind CSS styling, and matching Figma component parity.
 
 ---
 
@@ -15,22 +15,113 @@
 
 ---
 
-## 💡 Overview
+## 📌 Definition
 
-**Creativ UI** is a comprehensive design system platform built for modern product teams. Unlike traditional UI libraries that only provide raw components, Creativ UI explains the thinking behind every design decision, accessibility pattern, and implementation detail—making it a learning resource as much as a production development tool.
+**Creativ UI** is an open-source design system that combines production-ready React components with a complete Figma design library, enabling designers and developers to build consistent, accessible, and scalable products from the same source of truth.
 
-Our mission is to bridge the gap between design and development by creating accessible, thoughtfully crafted UI components that are as educational as they are production-ready.
+Built on **Base UI** and styled with **Tailwind CSS**, Creativ UI provides accessible component primitives, strong TypeScript APIs, and a matching design system that eliminates the disconnect between design and implementation.
+
+Unlike traditional component libraries that only provide code, Creativ UI provides both the **React components** and their **fully editable Figma counterparts**, allowing entire interfaces to be designed, prototyped, and implemented without starting from scratch.
 
 ---
 
-## ✨ Value Proposition
+## ❌ The Problem
 
-* 🎨 **Complete Figma Design System**: 1:1 matching Figma components with identical variants, states, and design token variables.
-* ⚛️ **Production-Ready React**: Strictly typed React components built on top of headless Base UI primitives and styled with Tailwind CSS.
-* ♿ **Accessibility-First**: Built to meet WCAG 2.1 AA contrast standards with keyboard navigation, screen reader attributes, and visible focus rings.
-* 📚 **Educational Documentation**: Detailed implementation guides, API specifications, and architectural tradeoffs.
-* 🧩 **Design Tokens**: Systematic scale for colors, Geist typography, spatial grids, and motion parameters.
-* 💡 **Design Rationale**: Explanations of *why* components are built the way they are to help developers learn design engineering.
+Modern React component libraries solve only half of the product development workflow.
+
+Developers can quickly build applications using pre-built components, but designers often don't have matching design assets.
+
+This creates several challenges:
+
+* Designers recreate components from scratch in Figma.
+* Design and code gradually drift apart.
+* New screens become inconsistent.
+* Custom components are redesigned repeatedly.
+* Teams waste time rebuilding the same patterns.
+
+Even when a component library exists, teams still need complete screen layouts and production-ready design files before development begins.
+
+---
+
+## ✅ The Solution
+
+Creativ UI bridges the gap between design and engineering.
+
+Every React component has an equivalent Figma component built using the same design tokens, spacing, typography, and interaction patterns.
+
+This allows designers and developers to work from a shared system instead of maintaining separate libraries.
+
+With Creativ UI you can:
+
+* Design complete product screens in Figma.
+* Build production-ready interfaces using the same React components.
+* Extend the library with new components while maintaining consistency.
+* Prototype ideas rapidly without recreating existing UI.
+* Keep design and implementation synchronized.
+
+---
+
+## ⚡ Why Creativ UI
+
+Creativ UI is built on top of **Base UI**, providing a strong foundation of accessible, composable, and unstyled primitives.
+
+On top of those primitives, every component is carefully crafted using **Tailwind CSS**, resulting in:
+
+* **Accessible by default**
+* **Keyboard-friendly interactions**
+* **Screen reader support**
+* **Production-ready APIs**
+* **Consistent design tokens**
+* **Clean TypeScript interfaces**
+* **Modern, scalable architecture**
+
+Developers get the flexibility of headless components without sacrificing design quality. Designers get a complete Figma system that perfectly mirrors the implementation.
+
+---
+
+## 💎 Value Proposition
+
+### 🎨 For Designers
+* Complete Figma component library
+* Production-ready design patterns
+* Design complete interfaces without rebuilding common UI
+* Extend existing components while maintaining consistency
+* Shared design tokens with engineering
+
+### ⚛️ For Developers
+* Accessible React components powered by Base UI
+* Tailwind CSS styling
+* Strong TypeScript support
+* Composable APIs
+* Production-ready architecture
+* Faster development with consistent UI patterns
+
+### 🤝 For Teams
+* **One shared design system**
+* **One visual language**
+* **One source of truth**
+
+*No duplicated work. No inconsistent interfaces. No rebuilding components from scratch.*
+
+---
+
+## 🎯 Core Principles
+
+Creativ UI is built around five core principles:
+
+1. **Accessibility First**
+2. **Design–Code Parity**
+3. **Composable Architecture**
+4. **Consistency at Scale**
+5. **Developer & Designer Experience**
+
+---
+
+## 🚀 Vision
+
+To become the design system that seamlessly connects design and development, enabling teams to move from idea to production without rebuilding the same interface twice.
+
+Creativ UI empowers designers to design confidently, developers to build efficiently, and teams to ship products faster using a shared, production-ready system.
 
 ---
 
@@ -43,7 +134,6 @@ Our mission is to bridge the gap between design and development by creating acce
 | **Primitives** | [Base UI](https://base-ui.com/) (`@base-ui/react`) |
 | **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) |
 | **Animations** | [Framer Motion](https://www.framer.com/motion/) |
-| **Icons** | [Lucide React](https://lucide.dev/) |
 
 ---
 
@@ -74,58 +164,28 @@ creativ-ui/
 
 ## 🚀 Getting Started
 
-### Prerequisites
-
-* **Node.js**: v18.17.0 or higher
-* **npm**: v9.0.0 or higher
-
 ### Local Setup
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/creativsingh/creativ-ui.git
-   cd creativ-ui
-   ```
+```bash
+# Clone repository
+git clone https://github.com/creativsingh/creativ-ui.git
+cd creativ-ui
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+# Install dependencies
+npm install
 
-3. **Run the development server**:
-   ```bash
-   npm run dev
-   ```
-   Open `http://localhost:3000` in your browser to view the documentation platform.
+# Run dev server
+npm run dev
 
-4. **Build for production**:
-   ```bash
-   npm run build
-   ```
+# Build production bundle
+npm run build
+```
 
 ---
 
 ## 🤝 Contributing & Forking
 
-Creativ UI is open-source design library and we actively welcome contributions!
-
-### How to Contribute
-
-1. **Fork the Repository**: Click the **Fork** button at the top right of this page.
-2. **Create a Feature Branch**:
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. **Make your changes**: Follow our design conventions in [`CLAUDE.md`](file:///Users/ajeetsingh/Desktop/Code/creativ-ui/CLAUDE.md) and [`DESIGN.md`](file:///Users/ajeetsingh/Desktop/Code/creativ-ui/DESIGN.md).
-4. **Commit your changes**:
-   ```bash
-   git commit -m "feat: add awesome feature"
-   ```
-5. **Push to your fork**:
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-6. **Open a Pull Request**: Submit a PR to `main` with a description of your changes.
+Creativ UI is open-source software. Feel free to **[Fork this repository](https://github.com/creativsingh/creativ-ui/fork)**, submit Pull Requests, and report issues!
 
 ---
 

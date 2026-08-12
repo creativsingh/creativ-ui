@@ -18,17 +18,17 @@ export const metadata: Metadata = {
     template: '%s | Creativ UI',
   },
   description:
-    'Creativ UI is a modern design system built with Base UI, React, TypeScript, and Tailwind CSS. It provides accessible, production-ready components with matching Figma designs, comprehensive documentation, and implementation guides—bridging the gap between design and engineering.',
+    'Creativ UI is an open-source design system that combines production-ready React components with a complete Figma design library, enabling designers and developers to build consistent, accessible, and scalable products from the same source of truth.',
   keywords: [
+    'Creativ UI',
     'Design System',
-    'React',
+    'React Components',
+    'Figma Library',
     'Base UI',
     'Tailwind CSS',
     'TypeScript',
-    'Figma',
     'Accessibility',
-    'Design Engineering',
-    'UI Components',
+    'Design Code Parity',
   ],
 };
 

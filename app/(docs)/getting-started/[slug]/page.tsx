@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { getNavEntry, isValidSlug } from '@/lib/navigation';
 import { PlaceholderDoc } from '@/components/docs/PlaceholderDoc';
+import { AccessibilityDoc } from '@/components/docs/AccessibilityDoc';
 
 interface PageProps {
   params: Promise<{
@@ -35,6 +36,10 @@ export default async function GettingStartedPage({ params }: PageProps) {
   const item = getNavEntry('getting-started', slug);
   if (!item) {
     notFound();
+  }
+
+  if (slug === 'accessibility') {
+    return <AccessibilityDoc item={item} />;
   }
 
   return <PlaceholderDoc item={item} />;
