@@ -139,98 +139,7 @@ export default function HomePage() {
           </Container>
         </section>
 
-        {/* 2. THE PROBLEM VS SOLUTION INTERACTIVE SWITCHER */}
-        <section className="py-16 lg:py-24 bg-neutral-50/50 dark:bg-neutral-950/40 border-b border-neutral-200/80 dark:border-neutral-800/80">
-          <Container size="default" className="space-y-10">
-            <div className="text-center space-y-4 max-w-2xl mx-auto">
-              <h2 className="font-mono text-xs uppercase tracking-wider text-neutral-500 font-semibold">
-                Workflow Parity
-              </h2>
-              <p className="text-3xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
-                Bridging the gap between design & code.
-              </p>
 
-              {/* Interactive Switcher Buttons */}
-              <div className="inline-flex p-1 rounded-full bg-neutral-200/70 dark:bg-neutral-800/70 text-xs font-medium border border-neutral-300/50 dark:border-neutral-700/50">
-                <button
-                  onClick={() => setWorkflowTab('solution')}
-                  className={`px-5 py-2 rounded-full transition-all ${
-                    workflowTab === 'solution'
-                      ? 'bg-neutral-950 text-white dark:bg-neutral-100 dark:text-neutral-950 shadow-md font-semibold'
-                      : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
-                  }`}
-                >
-                  ✨ Creativ UI Solution
-                </button>
-                <button
-                  onClick={() => setWorkflowTab('problem')}
-                  className={`px-5 py-2 rounded-full transition-all ${
-                    workflowTab === 'problem'
-                      ? 'bg-rose-600 text-white shadow-md font-semibold'
-                      : 'text-neutral-600 dark:text-neutral-400 hover:text-rose-600 dark:hover:text-rose-400'
-                  }`}
-                >
-                  ⚠️ Traditional Problem
-                </button>
-              </div>
-            </div>
-
-            {/* Display Box */}
-            <div className="max-w-4xl mx-auto transition-all">
-              {workflowTab === 'solution' ? (
-                <div className="p-8 sm:p-10 rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xl space-y-6">
-                  <div className="flex items-center justify-between border-b border-neutral-100 dark:border-neutral-800 pb-4">
-                    <span className="font-mono text-xs text-emerald-600 dark:text-emerald-400 font-semibold uppercase tracking-wider">
-                      Creativ UI Synchronized Ecosystem
-                    </span>
-                    <span className="text-xs px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-mono">
-                      100% Design-Code Parity
-                    </span>
-                  </div>
-
-                  <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100 leading-relaxed">
-                    Every React component has an equivalent Figma component built using the exact same design tokens, spacing, typography, and interaction patterns.
-                  </p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                    <div className="p-4 rounded-xl bg-neutral-50 dark:bg-neutral-950/60 border border-neutral-200/60 dark:border-neutral-800/60 space-y-1">
-                      <span className="font-semibold text-neutral-900 dark:text-neutral-100">🎨 Design in Figma</span>
-                      <p className="text-neutral-500">Design complete screens using matching Figma component libraries.</p>
-                    </div>
-                    <div className="p-4 rounded-xl bg-neutral-50 dark:bg-neutral-950/60 border border-neutral-200/60 dark:border-neutral-800/60 space-y-1">
-                      <span className="font-semibold text-neutral-900 dark:text-neutral-100">⚛️ Build in React</span>
-                      <p className="text-neutral-500">Ship production interfaces using identical Base UI + Tailwind code.</p>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="p-8 sm:p-10 rounded-2xl bg-rose-50/30 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/40 shadow-xl space-y-6">
-                  <div className="flex items-center justify-between border-b border-rose-200/60 dark:border-rose-900/40 pb-4">
-                    <span className="font-mono text-xs text-rose-600 dark:text-rose-400 font-semibold uppercase tracking-wider">
-                      Traditional Component Libraries
-                    </span>
-                    <span className="text-xs px-2.5 py-1 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 font-mono">
-                      Workflow Drift
-                    </span>
-                  </div>
-
-                  <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100 leading-relaxed">
-                    Modern React libraries solve only half the workflow. Developers get components, but designers lack matching Figma assets—causing continuous friction.
-                  </p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-neutral-600 dark:text-neutral-400">
-                    <div className="p-3 rounded-lg bg-white dark:bg-neutral-900 border border-rose-200 dark:border-rose-900/40">
-                      ❌ Designers recreate components from scratch in Figma.
-                    </div>
-                    <div className="p-3 rounded-lg bg-white dark:bg-neutral-900 border border-rose-200 dark:border-rose-900/40">
-                      ❌ Design and code gradually drift apart over sprint releases.
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </Container>
-        </section>
 
         {/* 3. VALUE PROPOSITION BY ROLE (INTERACTIVE SEGMENTED TABS) */}
         <section className="py-16 lg:py-24 border-b border-neutral-200/80 dark:border-neutral-800/80">
@@ -247,31 +156,28 @@ export default function HomePage() {
               <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
                 <button
                   onClick={() => setRoleTab('designers')}
-                  className={`px-5 py-2.5 rounded-full text-xs font-semibold transition-all ${
-                    roleTab === 'designers'
-                      ? 'bg-purple-600 text-white shadow-md'
-                      : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
-                  }`}
+                  className={`px-5 py-2.5 rounded-full text-xs font-semibold transition-all ${roleTab === 'designers'
+                    ? 'bg-purple-600 text-white shadow-md'
+                    : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
+                    }`}
                 >
                   🎨 For Designers
                 </button>
                 <button
                   onClick={() => setRoleTab('developers')}
-                  className={`px-5 py-2.5 rounded-full text-xs font-semibold transition-all ${
-                    roleTab === 'developers'
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
-                  }`}
+                  className={`px-5 py-2.5 rounded-full text-xs font-semibold transition-all ${roleTab === 'developers'
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
+                    }`}
                 >
                   ⚛️ For Developers
                 </button>
                 <button
                   onClick={() => setRoleTab('teams')}
-                  className={`px-5 py-2.5 rounded-full text-xs font-semibold transition-all ${
-                    roleTab === 'teams'
-                      ? 'bg-emerald-600 text-white shadow-md'
-                      : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
-                  }`}
+                  className={`px-5 py-2.5 rounded-full text-xs font-semibold transition-all ${roleTab === 'teams'
+                    ? 'bg-emerald-600 text-white shadow-md'
+                    : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
+                    }`}
                 >
                   🤝 For Teams
                 </button>
@@ -385,11 +291,10 @@ export default function HomePage() {
                   <button
                     key={p.num}
                     onClick={() => setActivePrinciple(index)}
-                    className={`w-full text-left p-4 rounded-xl transition-all flex items-center justify-between border ${
-                      activePrinciple === index
-                        ? 'bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 shadow-sm font-semibold'
-                        : 'border-transparent text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 hover:bg-neutral-100/50 dark:hover:bg-neutral-900/40'
-                    }`}
+                    className={`w-full text-left p-4 rounded-xl transition-all flex items-center justify-between border ${activePrinciple === index
+                      ? 'bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 shadow-sm font-semibold'
+                      : 'border-transparent text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 hover:bg-neutral-100/50 dark:hover:bg-neutral-900/40'
+                      }`}
                   >
                     <div className="flex items-center gap-3">
                       <span className="font-mono text-xs text-neutral-400">{p.num}</span>
@@ -423,86 +328,7 @@ export default function HomePage() {
           </Container>
         </section>
 
-        {/* 5. SLEEK VISION BANNER & CATEGORY EXPLORER */}
-        <section className="py-16 lg:py-24">
-          <Container size="default" className="space-y-16">
-            {/* Vision Banner */}
-            <div className="p-8 sm:p-12 rounded-3xl bg-neutral-950 text-white dark:bg-neutral-900 border border-neutral-800 text-center max-w-4xl mx-auto shadow-2xl space-y-4 relative overflow-hidden">
-              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#50e3c2_1px,transparent_1px)] [background-size:16px_16px]" />
-              <div className="relative z-10 space-y-4">
-                <span className="font-mono text-xs uppercase tracking-widest text-emerald-400 font-semibold">
-                  Our Vision
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white leading-snug">
-                  To become the design system that seamlessly connects design and development, enabling teams to move from idea to production without rebuilding the same interface twice.
-                </h2>
-              </div>
-            </div>
 
-            {/* Quick Category Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Link
-                href="/getting-started/introduction"
-                className="group p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/80 hover:border-neutral-400 dark:hover:border-neutral-600 transition-all space-y-3"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs px-2.5 py-1 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium">
-                    Category 01
-                  </span>
-                  <span className="text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-                  Getting Started
-                </h3>
-                <p className="text-xs text-neutral-500 leading-relaxed">
-                  Learn architectural workflows, setup guides, and system conventions.
-                </p>
-              </Link>
-
-              <Link
-                href="/foundations/colors"
-                className="group p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/80 hover:border-neutral-400 dark:hover:border-neutral-600 transition-all space-y-3"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs px-2.5 py-1 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium">
-                    Category 02
-                  </span>
-                  <span className="text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-                  Foundations
-                </h3>
-                <p className="text-xs text-neutral-500 leading-relaxed">
-                  Explore color scales, Geist typography, spatial grids, and tokens.
-                </p>
-              </Link>
-
-              <Link
-                href="/components/button"
-                className="group p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/80 hover:border-neutral-400 dark:hover:border-neutral-600 transition-all space-y-3"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs px-2.5 py-1 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium">
-                    Category 03
-                  </span>
-                  <span className="text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-                  React Components
-                </h3>
-                <p className="text-xs text-neutral-500 leading-relaxed">
-                  Browse Button, Input, Dialog, Card, Badge, and Base UI primitives.
-                </p>
-              </Link>
-            </div>
-          </Container>
-        </section>
       </main>
 
       <Footer />
