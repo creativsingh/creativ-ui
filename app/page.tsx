@@ -160,21 +160,19 @@ export default function HomePage() {
               <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
                 <button
                   onClick={() => setRoleTab('designers')}
-                  className={`px-6 py-2.5 rounded-full text-xs font-semibold transition-all ${
-                    roleTab === 'designers'
-                      ? 'bg-purple-600 text-white shadow-md'
-                      : 'bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
-                  }`}
+                  className={`px-6 py-2.5 rounded-full text-xs font-semibold transition-all ${roleTab === 'designers'
+                    ? 'bg-purple-600 text-white shadow-md'
+                    : 'bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
+                    }`}
                 >
                   🎨 For Designers
                 </button>
                 <button
                   onClick={() => setRoleTab('developers')}
-                  className={`px-6 py-2.5 rounded-full text-xs font-semibold transition-all ${
-                    roleTab === 'developers'
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
-                  }`}
+                  className={`px-6 py-2.5 rounded-full text-xs font-semibold transition-all ${roleTab === 'developers'
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
+                    }`}
                 >
                   ⚛️ For Developers
                 </button>
@@ -184,10 +182,8 @@ export default function HomePage() {
             {/* MINIMAL ROLE CARDS (PARAGRAPH + BUTTON ONLY) */}
             <div className="max-w-3xl mx-auto">
               {roleTab === 'designers' && (
-                <div className="p-8 sm:p-10 rounded-2xl bg-white/70 dark:bg-neutral-900/60 backdrop-blur-xl border border-neutral-200/80 dark:border-neutral-800/70 shadow-xl shadow-neutral-950/5 dark:shadow-black/20 text-center space-y-6">
-                  <h3 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
-                    Designers Experience
-                  </h3>
+                <div className=" flex flex-col gap-4">
+
                   <p className="text-base text-neutral-600 dark:text-neutral-300 leading-relaxed font-normal max-w-xl mx-auto text-balance">
                     Every React component ships with its matching Figma component, giving designers and developers one shared design system from idea to production.
                   </p>
@@ -212,10 +208,8 @@ export default function HomePage() {
               )}
 
               {roleTab === 'developers' && (
-                <div className="p-8 sm:p-10 rounded-2xl bg-white/70 dark:bg-neutral-900/60 backdrop-blur-xl border border-neutral-200/80 dark:border-neutral-800/70 shadow-xl shadow-neutral-950/5 dark:shadow-black/20 text-center space-y-6">
-                  <h3 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
-                    Developers Experience
-                  </h3>
+                <div className="flex flex-col gap-4">
+
                   <p className="text-base text-neutral-600 dark:text-neutral-300 leading-relaxed font-normal max-w-xl mx-auto text-balance">
                     Unstyled Base UI primitives styled with Tailwind CSS—delivering built-in WAI-ARIA accessibility, flexible component slot props, and zero runtime overhead.
                   </p>
@@ -257,11 +251,10 @@ export default function HomePage() {
                     <button
                       key={p.num}
                       onClick={() => setActivePrinciple(index)}
-                      className={`w-full text-left p-4 rounded-xl transition-all flex items-center justify-between border ${
-                        activePrinciple === index
-                          ? 'bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl border-neutral-300 dark:border-neutral-700 shadow-md font-semibold'
-                          : 'border-transparent text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 hover:bg-white/40 dark:hover:bg-neutral-900/40 backdrop-blur-sm'
-                      }`}
+                      className={`w-full text-left p-4 rounded-xl transition-all flex items-center justify-between border ${activePrinciple === index
+                        ? 'bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl border-neutral-300 dark:border-neutral-700 shadow-md font-semibold'
+                        : 'border-transparent text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 hover:bg-white/40 dark:hover:bg-neutral-900/40 backdrop-blur-sm'
+                        }`}
                     >
                       <div className="flex items-center gap-3">
                         <span className="font-mono text-xs text-neutral-400">{p.num}</span>
