@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getNavSections } from '@/lib/navigation';
+import { Logo } from '@/components/layout/Logo';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -48,9 +49,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
           {/* Header */}
           <div className="flex items-center justify-between mb-8 pb-4 border-b border-neutral-200 dark:border-neutral-800">
             <Link href="/" className="flex items-center gap-2 font-semibold text-neutral-900 dark:text-neutral-100">
-              <div className="w-6 h-6 rounded bg-neutral-950 dark:bg-neutral-100 text-white dark:text-neutral-950 flex items-center justify-center font-mono text-xs font-bold">
-                C
-              </div>
+              <Logo className="w-6 h-6 text-neutral-950 dark:text-neutral-100 flex-shrink-0" />
               <span>Creativ UI</span>
             </Link>
             <button

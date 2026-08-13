@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import { Container } from './Container';
+import { Logo } from './Logo';
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-950/50 py-12 lg:py-16 text-sm text-neutral-600 dark:text-neutral-400">
+    <footer className="w-full border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-950/50 py-8 text-sm text-neutral-600 dark:text-neutral-400">
       <Container size="wide">
+        {/* Navigation Grid (Temporarily Commented Out) */}
+        {/*
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* Column 1: Brand & Core Tagline */}
           <div className="space-y-3 md:col-span-1">
             <div className="flex items-center gap-2 font-semibold text-neutral-900 dark:text-neutral-100">
-              <div className="w-5 h-5 rounded bg-neutral-950 dark:bg-neutral-100 text-white dark:text-neutral-950 flex items-center justify-center font-mono text-[10px] font-bold">
-                C
-              </div>
+              <Logo className="w-5 h-5 text-neutral-950 dark:text-neutral-100 flex-shrink-0" />
               <span className="text-sm tracking-tight font-semibold">Creativ UI</span>
             </div>
             <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
@@ -19,7 +19,6 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Column 2: Getting Started */}
           <div>
             <h3 className="font-mono text-xs uppercase tracking-wider text-neutral-900 dark:text-neutral-100 font-semibold mb-3">
               Getting Started
@@ -43,7 +42,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Foundations */}
           <div>
             <h3 className="font-mono text-xs uppercase tracking-wider text-neutral-900 dark:text-neutral-100 font-semibold mb-3">
               Foundations
@@ -67,7 +65,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Components */}
           <div>
             <h3 className="font-mono text-xs uppercase tracking-wider text-neutral-900 dark:text-neutral-100 font-semibold mb-3">
               Components
@@ -106,8 +103,9 @@ export function Footer() {
             </ul>
           </div>
         </div>
+        */}
 
-        <div className="pt-8 border-t border-neutral-200/60 dark:border-neutral-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
           <p>© {new Date().getFullYear()} Creativ UI. Built on Base UI & Tailwind CSS.</p>
 
           <div className="flex flex-wrap items-center gap-4">

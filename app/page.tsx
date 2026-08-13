@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Container } from '@/components/layout/Container';
+import { Logo } from '@/components/layout/Logo';
 
 export default function HomePage() {
   // Role Selector: 'designers' | 'developers'
@@ -63,16 +64,29 @@ export default function HomePage() {
           <Container size="default" className="relative z-10 space-y-12">
             {/* Top Text Cluster */}
             <div className="text-center space-y-6 max-w-4xl mx-auto">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-neutral-950 dark:text-white leading-[1.05] text-balance">
-                Design in Figma. <br className="hidden sm:inline" />
-                Build in React.
-              </h1>
+              {/* WORK IN PROGRESS / COMING SOON BADGE */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 dark:bg-neutral-900/70 border border-neutral-200/80 dark:border-neutral-800/80 backdrop-blur-md text-xs text-neutral-700 dark:text-neutral-300 font-medium shadow-2xs">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                </span>
+                <span>Work in Progress · Coming Soon</span>
+              </div>
+
+              {/* LOGO & MAIN BRAND HEADING */}
+              <div className="flex flex-col items-center justify-center gap-4 pt-2">
+                <Logo className="w-16 h-16 sm:w-20 sm:h-20 text-neutral-950 dark:text-white transition-transform hover:scale-105" />
+                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-neutral-950 dark:text-white leading-[1.05] text-balance">
+                  Creativ UI
+                </h1>
+              </div>
 
               <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed font-normal text-balance">
                 An open-source design system combining production-ready React components with a complete Figma design library—built from one shared source of truth.
               </p>
 
-              {/* CTAs - Equal Width/Length for Primary & Secondary */}
+              {/* CTAs - Equal Width/Length for Primary & Secondary (TEMPORARILY COMMENTED OUT) */}
+              {/*
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Link
                   href="/getting-started/introduction"
@@ -87,6 +101,7 @@ export default function HomePage() {
                   Browse Components
                 </Link>
               </div>
+              */}
 
               {/* UNIFIED TECH STACK LOGOS STRIP - HEADING ON TOP & ICONS ONLY */}
               <div className="pt-8 flex flex-col items-center justify-center gap-3 max-w-3xl mx-auto border-t border-neutral-200/50 dark:border-neutral-800/50">
@@ -148,7 +163,8 @@ export default function HomePage() {
           </Container>
         </section>
 
-        {/* 2. VALUE PROPOSITION BY ROLE */}
+        {/* 2. VALUE PROPOSITION BY ROLE (TEMPORARILY COMMENTED OUT) */}
+        {/*
         <section className="py-16 lg:py-24 bg-white dark:bg-[#09090b]">
           <Container size="default" className="space-y-10">
             <div className="text-center space-y-4 max-w-2xl mx-auto">
@@ -156,34 +172,36 @@ export default function HomePage() {
                 Tailored for every role in your product team.
               </h2>
 
-              {/* Dual Role Segmented Tabs */}
               <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
                 <button
                   onClick={() => setRoleTab('designers')}
-                  className={`px-6 py-2.5 rounded-full text-xs font-semibold transition-all ${roleTab === 'designers'
-                    ? 'bg-purple-600 text-white shadow-md'
-                    : 'bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
-                    }`}
+                  className={`px-6 py-2.5 rounded-full text-xs font-semibold transition-all ${
+                    roleTab === 'designers'
+                      ? 'bg-purple-600 text-white shadow-md'
+                      : 'bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
+                  }`}
                 >
                   🎨 For Designers
                 </button>
                 <button
                   onClick={() => setRoleTab('developers')}
-                  className={`px-6 py-2.5 rounded-full text-xs font-semibold transition-all ${roleTab === 'developers'
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
-                    }`}
+                  className={`px-6 py-2.5 rounded-full text-xs font-semibold transition-all ${
+                    roleTab === 'developers'
+                      ? 'bg-blue-600 text-white shadow-md'
+                      : 'bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
+                  }`}
                 >
                   ⚛️ For Developers
                 </button>
               </div>
             </div>
 
-            {/* MINIMAL ROLE CARDS (PARAGRAPH + BUTTON ONLY) */}
             <div className="max-w-3xl mx-auto">
               {roleTab === 'designers' && (
-                <div className=" flex flex-col gap-4">
-
+                <div className="p-8 sm:p-10 rounded-2xl bg-white/70 dark:bg-neutral-900/60 backdrop-blur-xl border border-neutral-200/80 dark:border-neutral-800/70 shadow-xl shadow-neutral-950/5 dark:shadow-black/20 text-center space-y-6">
+                  <h3 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
+                    Designers Experience
+                  </h3>
                   <p className="text-base text-neutral-600 dark:text-neutral-300 leading-relaxed font-normal max-w-xl mx-auto text-balance">
                     Every React component ships with its matching Figma component, giving designers and developers one shared design system from idea to production.
                   </p>
@@ -208,8 +226,10 @@ export default function HomePage() {
               )}
 
               {roleTab === 'developers' && (
-                <div className="flex flex-col gap-4">
-
+                <div className="p-8 sm:p-10 rounded-2xl bg-white/70 dark:bg-neutral-900/60 backdrop-blur-xl border border-neutral-200/80 dark:border-neutral-800/70 shadow-xl shadow-neutral-950/5 dark:shadow-black/20 text-center space-y-6">
+                  <h3 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
+                    Developers Experience
+                  </h3>
                   <p className="text-base text-neutral-600 dark:text-neutral-300 leading-relaxed font-normal max-w-xl mx-auto text-balance">
                     Unstyled Base UI primitives styled with Tailwind CSS—delivering built-in WAI-ARIA accessibility, flexible component slot props, and zero runtime overhead.
                   </p>
@@ -226,13 +246,12 @@ export default function HomePage() {
             </div>
           </Container>
         </section>
+        */}
 
-        {/* 3. CORE PRINCIPLES INTERACTIVE EXPLORER WITH SECONDARY MESH GRADIENT */}
+        {/* 3. CORE PRINCIPLES INTERACTIVE EXPLORER (TEMPORARILY COMMENTED OUT) */}
+        {/*
         <div className="relative secondary-mesh-gradient">
-          {/* Top Gradient Fade Overlay - Starts from black/canvas and merges into subtle gradient */}
           <div className="pointer-events-none absolute top-0 inset-x-0 h-36 bg-gradient-to-b from-white via-white/70 to-transparent dark:from-[#09090b] dark:via-[#09090b]/75 dark:to-transparent z-10" />
-
-          {/* Bottom Gradient Fade Overlay - Merges gradient back into black/canvas tone */}
           <div className="pointer-events-none absolute bottom-0 inset-x-0 h-36 bg-gradient-to-b from-transparent via-white/70 to-white dark:via-[#09090b]/75 dark:to-[#09090b] z-10" />
 
           <section className="relative z-10 py-16 lg:py-24">
@@ -243,18 +262,17 @@ export default function HomePage() {
                 </h2>
               </div>
 
-              {/* Interactive Principle Selector with Glassmorphism */}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
-                {/* Number List Buttons */}
                 <div className="space-y-2 lg:col-span-1">
                   {principles.map((p, index) => (
                     <button
                       key={p.num}
                       onClick={() => setActivePrinciple(index)}
-                      className={`w-full text-left p-4 rounded-xl transition-all flex items-center justify-between border ${activePrinciple === index
-                        ? 'bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl border-neutral-300 dark:border-neutral-700 shadow-md font-semibold'
-                        : 'border-transparent text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 hover:bg-white/40 dark:hover:bg-neutral-900/40 backdrop-blur-sm'
-                        }`}
+                      className={`w-full text-left p-4 rounded-xl transition-all flex items-center justify-between border ${
+                        activePrinciple === index
+                          ? 'bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl border-neutral-300 dark:border-neutral-700 shadow-md font-semibold'
+                          : 'border-transparent text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-200 hover:bg-white/40 dark:hover:bg-neutral-900/40 backdrop-blur-sm'
+                      }`}
                     >
                       <div className="flex items-center gap-3">
                         <span className="font-mono text-xs text-neutral-400">{p.num}</span>
@@ -265,7 +283,6 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                {/* Active Detail Box with Translucent Backdrop Blur */}
                 <div className="lg:col-span-2 p-8 sm:p-10 rounded-2xl bg-white/70 dark:bg-neutral-900/60 backdrop-blur-xl border border-neutral-200/80 dark:border-neutral-800/70 shadow-2xl shadow-neutral-950/5 dark:shadow-black/20 space-y-4">
                   <div className="flex items-center justify-between border-b border-neutral-200/50 dark:border-neutral-800/50 pb-3">
                     <span className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-widest">
@@ -288,6 +305,7 @@ export default function HomePage() {
             </Container>
           </section>
         </div>
+        */}
       </main>
 
       <Footer />

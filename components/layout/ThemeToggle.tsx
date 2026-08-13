@@ -9,21 +9,22 @@ export function ThemeToggle() {
     return <div className="w-8 h-8 rounded-full bg-neutral-100 dark:bg-neutral-800 animate-pulse" />;
   }
 
+  // Determine current active dark mode state from document root or theme state
   const isDark =
-    theme === 'dark' ||
-    (theme === 'system' &&
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches);
+    typeof document !== 'undefined'
+      ? document.documentElement.classList.contains('dark')
+      : theme === 'dark';
 
   return (
     <button
       onClick={() => updateTheme(isDark ? 'light' : 'dark')}
-      className="inline-flex items-center justify-center p-2 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 dark:focus-visible:ring-neutral-100"
+      className="inline-flex items-center justify-center p-2 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100/60 dark:hover:bg-neutral-800/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 dark:focus-visible:ring-neutral-100"
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
       type="button"
     >
       {isDark ? (
-        // Sun Icon
+        // Sun Icon (for switching to light mode)
         <svg
           className="w-4 h-4"
           fill="none"
@@ -35,9 +36,9 @@ export function ThemeToggle() {
           <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" />
         </svg>
       ) : (
-        // Moon Icon
+        // Moon Icon (for switching to dark mode)
         <svg
-          className="w-4 h-4"
+          className="w-4 h-4 text-neutral-700"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"

@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Container } from './Container';
 import { ThemeToggle } from './ThemeToggle';
 import { SearchModal } from './SearchModal';
+import { Logo } from './Logo';
 
 interface NavbarProps {
   onMobileNavToggle?: () => void;
@@ -68,17 +69,13 @@ export function Navbar({ onMobileNavToggle }: NavbarProps) {
               href="/"
               className="flex items-center gap-2.5 font-semibold text-neutral-900 dark:text-neutral-100 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 dark:focus-visible:ring-neutral-100 rounded-md py-1"
             >
-              <div className="w-6 h-6 rounded bg-neutral-950 dark:bg-neutral-100 text-white dark:text-neutral-950 flex items-center justify-center font-mono text-xs font-bold transition-transform group-hover:scale-105">
-                C
-              </div>
+              <Logo className="w-6 h-6 text-neutral-950 dark:text-neutral-100 transition-transform group-hover:scale-105 flex-shrink-0" />
               <span className="tracking-tight text-base font-semibold">Creativ UI</span>
-              <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-neutral-100/80 dark:bg-neutral-800/80 backdrop-blur-md text-neutral-600 dark:text-neutral-400 font-medium">
-                v0.1
-              </span>
             </Link>
           </div>
 
-          {/* CENTER: Navigation Links (Mathematically centered on desktop) */}
+          {/* CENTER: Navigation Links (Temporarily Commented Out) */}
+          {/*
           <nav
             aria-label="Main navigation"
             className="hidden md:flex items-center gap-1 text-sm font-medium absolute left-1/2 -translate-x-1/2"
@@ -114,10 +111,12 @@ export function Navbar({ onMobileNavToggle }: NavbarProps) {
               Components
             </Link>
           </nav>
+          */}
 
-          {/* RIGHT: Utility Actions (Search Bar, Outlined Figma Icon, GitHub Icon, Theme Toggle) */}
+          {/* RIGHT: Utility Actions (Search commented out; Figma Icon, GitHub Icon, Theme Toggle active) */}
           <div className="flex items-center gap-1.5">
-            {/* Short Search Bar Button with ⌘K Badge */}
+            {/* Short Search Bar Button with ⌘K Badge (Temporarily Commented Out) */}
+            {/*
             <button
               onClick={() => setSearchOpen(true)}
               className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-mono text-neutral-500 dark:text-neutral-400 bg-neutral-100/60 dark:bg-neutral-900/60 hover:bg-neutral-200/70 dark:hover:bg-neutral-800/90 border border-neutral-200/50 dark:border-neutral-800/50 backdrop-blur-md rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 dark:focus-visible:ring-neutral-100 shadow-2xs"
@@ -132,6 +131,7 @@ export function Navbar({ onMobileNavToggle }: NavbarProps) {
                 ⌘K
               </kbd>
             </button>
+            */}
 
             {/* Outlined Figma Icon Link */}
             <a
